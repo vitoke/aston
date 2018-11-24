@@ -1,6 +1,6 @@
 {
   "name": "aston",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "A multi-purpose, immutable, asynchronous, context-safe configuration management utility.",
   "module": "src/lib/index.js",
   "main": "dist/aston.node.js",
