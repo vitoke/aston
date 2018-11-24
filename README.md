@@ -161,8 +161,8 @@ The following extra properties can optionally be added:
 - `key`: specifies the key for which the instance can be retrieved, can be any type
 - `args`: specifies an array of arguments to be passed to the creation function or
           class constructor
-- `passAston`: when true and `single` is a function, it's owning Aston instance
-                will be passed as first parameter
+- `supplyAston`: when true and `single` is a function, it's owning Aston instance
+                 will be passed as first parameter
 
 If the value is an object or class, and no key is specified, Aston will assume
 the class constructor is the key.
@@ -172,7 +172,7 @@ const config = Aston.inject(
   { single: BarClass, args: [1, 'Test'] },
   { key: 'foo', 
     single: async aston => new FooClass(await aston.get(BarClass),
-    passAston: true
+    supplyAston: true
   }
 );
 
@@ -193,8 +193,8 @@ The following extra properties can optionally be added:
 - `key`: specifies the key for which the instance can be retrieved, can be any type
 - `args`: specifies an array of arguments to be passed to the creation function or
           class constructor
-- `passAston`: when true and `multi` is a function, it's owning Aston instance
-                will be passed as first parameter
+- `supplyAston`: when true and `multi` is a function, it's owning Aston instance
+                 will be passed as first parameter
 
 If the value is a class, and no key is specified, Aston will assume the key
 is the class constructor.
@@ -204,7 +204,7 @@ const config = Aston.inject(
   { multi: BarClass, args: [1, 'Test'] },
   { key: 'foo', 
     single: (aston, a, b) => new FooClass(a, b, aston.get(BarClass)),
-    passAston: true
+    supplyAston: true
   }
 )
 
